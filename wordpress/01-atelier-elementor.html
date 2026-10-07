@@ -1,0 +1,133 @@
+<!-- Wklej całą zawartość do widgetu HTML w Elementor Canvas. -->
+<style>
+
+.merano-variant { --paper:#f4f0e8; --ink:#242621; --muted:#555a52; --accent:#702b3e; --line:#cfcfc1; --serif:Georgia,"Times New Roman",serif; --sans:Arial,Helvetica,sans-serif; background:var(--paper); color:var(--ink); font:15px/1.75 var(--sans); width:100%; overflow-wrap:break-word; }
+.merano-variant *, .merano-variant *::before, .merano-variant *::after { box-sizing:border-box; }
+.merano-variant h1,.merano-variant h2,.merano-variant h3,.merano-variant p,.merano-variant figure { margin:0; }
+.merano-variant h1,.merano-variant h2,.merano-variant h3 { font-family:var(--serif); font-weight:400; line-height:1.1; letter-spacing:-1.8px; }
+.merano-variant h2 { font-size:clamp(36px,3.6vw,54px); }
+.merano-variant h3 { font-size:28px; letter-spacing:-.5px; }
+.merano-variant img { display:block; max-width:100%; width:100%; object-fit:cover; }
+.merano-variant a { color:inherit; text-decoration:none; }
+.merano-variant a:hover { text-decoration:none; }
+.merano-variant a:focus-visible,.merano-variant summary:focus-visible { outline:3px solid #cf975f; outline-offset:5px; }
+.merano-variant [id] { scroll-margin-top:25px; }
+.merano-variant .mv-wrap { width:calc(100% - 112px); max-width:1280px; margin-inline:auto; }
+.merano-variant .mv-kicker { font:700 11px/1.5 var(--sans); letter-spacing:2px; text-transform:uppercase; }
+.merano-variant .mv-text { color:var(--muted); font-size:15px; line-height:1.8; max-width:470px; }
+.merano-variant .mv-actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:30px; }
+.merano-variant .mv-button { display:inline-flex; align-items:center; justify-content:center; gap:26px; min-height:52px; padding:14px 22px; background:var(--accent); border:1px solid var(--accent); color:white; font:700 12px/1.5 var(--sans); transition:filter .15s; }
+.merano-variant .mv-button:hover { filter:brightness(.87); }
+.merano-variant .mv-button svg { flex-shrink:0; }
+.merano-variant .mv-outline { color:var(--ink); background:transparent; border-color:currentColor; }
+.merano-variant .mv-link { display:inline-flex; align-items:center; gap:20px; padding-bottom:7px; border-bottom:1px solid currentColor; font-size:12px; font-weight:700; margin-top:24px; }
+.merano-variant .mv-section { padding-block:94px; }
+.merano-variant .mv-skip { position:absolute; left:20px; top:-120px; z-index:10; background:white; color:black; padding:12px; }
+.merano-variant .mv-skip:focus { top:10px; }
+.merano-variant .mv-header { border-bottom:1px solid var(--line); }
+.merano-variant .mv-header-inner { display:flex; justify-content:space-between; align-items:center; gap:35px; min-height:110px; position:relative; }
+.merano-variant .mv-brand { display:block; flex-shrink:0; }
+.merano-variant .mv-logo { width:145px; height:auto; object-fit:contain; }
+.merano-variant .mv-brand span { display:block; text-align:center; font-size:8px; letter-spacing:3.2px; margin-top:5px; }
+.merano-variant .mv-nav { display:flex; align-items:center; gap:27px; font-size:12px; }
+.merano-variant .mv-nav a:hover { opacity:.7; }
+.merano-variant .mv-nav-book { border-bottom:1px solid currentColor; padding:8px 0; margin-left:16px; font-weight:700; }
+.merano-variant .mv-mobile-nav { display:none; }
+.merano-variant .mv-grid { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:85px; }
+.merano-variant .mv-grid > * { min-width:0; }
+.merano-variant .mv-copy h2 { margin:17px 0 25px; }
+.merano-variant .mv-section-photo { height:500px; }
+.merano-variant .mv-contact { padding-block:72px; background:var(--accent); color:white; }
+.merano-variant .mv-contact-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:85px; align-items:center; }
+.merano-variant .mv-contact h2 { margin:16px 0 26px; font-size:43px; }
+.merano-variant .mv-contact .mv-button { background:var(--paper); border-color:var(--paper); color:var(--ink); }
+.merano-variant .mv-contact-details { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.merano-variant .mv-contact-details small { display:block; text-transform:uppercase; font-size:9px; letter-spacing:1.3px; margin-bottom:10px; }
+.merano-variant .mv-contact-details p { margin-bottom:12px; }
+.merano-variant .mv-contact-details a { display:block; font-size:12px; margin-top:9px; overflow-wrap:anywhere; }
+.merano-variant .mv-contact-details .mv-phone { font-size:24px; font-family:var(--serif); margin:0; }
+.merano-variant .mv-footer { padding-block:27px 22px; background:var(--ink); color:var(--paper); font-size:10px; }
+.merano-variant .mv-footer > div { display:flex; justify-content:space-between; gap:22px; }
+.merano-variant .mv-footer > div > div { display:flex; gap:25px; }
+.merano-variant .mv-pfr { font-size:9px; opacity:.75; margin-top:20px; }
+@media(max-width:1100px) {
+ .merano-variant .mv-wrap { width:calc(100% - 64px); }
+ .merano-variant .mv-nav { gap:20px; }
+ .merano-variant .mv-nav-book { margin-left:0; }
+ .merano-variant .mv-grid,.merano-variant .mv-contact-grid { gap:45px; }
+ .merano-variant .mv-contact-details { grid-template-columns:1fr; gap:23px; }
+}
+@media(max-width:850px) {
+ .merano-variant .mv-nav { display:none; }
+ .merano-variant .mv-header-inner { min-height:88px; }
+ .merano-variant .mv-mobile-nav { display:block; }
+ .merano-variant .mv-mobile-nav summary { display:flex; align-items:center; gap:12px; list-style:none; cursor:pointer; font-size:12px; }
+ .merano-variant .mv-mobile-nav summary::-webkit-details-marker { display:none; }
+ .merano-variant .mv-mobile-nav summary span { font-size:23px; }
+ .merano-variant .mv-mobile-nav nav { position:absolute; z-index:8; left:-32px; right:-32px; top:88px; padding:16px 32px; background:var(--paper); color:var(--ink); border-bottom:1px solid var(--line); }
+ .merano-variant .mv-mobile-nav nav a { display:block; padding:12px 0; border-bottom:1px solid var(--line); }
+ .merano-variant .mv-mobile-nav nav a:last-child { border-bottom:0; }
+ .merano-variant .mv-section { padding-block:65px; }
+ .merano-variant .mv-grid { gap:35px; }
+ .merano-variant .mv-section-photo { height:430px; }
+ .merano-variant .mv-contact-grid { grid-template-columns:1fr 1fr; gap:35px; }
+ .merano-variant .mv-contact h2 { font-size:36px; }
+}
+@media(max-width:600px) {
+ .merano-variant .mv-wrap { width:calc(100% - 40px); }
+ .merano-variant .mv-header-inner { min-height:80px; }
+ .merano-variant .mv-logo { width:120px; }
+ .merano-variant .mv-brand span { font-size:7px; }
+ .merano-variant .mv-mobile-nav nav { left:-20px; right:-20px; top:80px; padding-inline:20px; }
+ .merano-variant .mv-grid,.merano-variant .mv-contact-grid { grid-template-columns:1fr; gap:32px; }
+ .merano-variant .mv-section { padding-block:50px; }
+ .merano-variant h2 { font-size:36px; letter-spacing:-1.2px; }
+ .merano-variant .mv-text { font-size:14px; }
+ .merano-variant .mv-kicker { font-size:10px; letter-spacing:1.6px; }
+ .merano-variant .mv-section-photo { height:380px; }
+ .merano-variant .mv-actions { gap:10px; margin-top:25px; }
+ .merano-variant .mv-button { gap:16px; padding:12px 18px; }
+ .merano-variant .mv-contact { padding-block:50px; }
+ .merano-variant .mv-contact h2 { font-size:35px; }
+ .merano-variant .mv-contact-details { grid-template-columns:1fr 1fr; gap:20px; }
+ .merano-variant .mv-contact-details .mv-phone { font-size:22px; }
+ .merano-variant .mv-footer > div { flex-direction:column; gap:15px; }
+}
+
+.merano-v1 { --paper:#151a17; --ink:#f3eee2; --muted:#b9c0b6; --accent:#b69c6d; --line:#3b443b; }
+.merano-v1 .mv-logo { filter:brightness(0) invert(1); }
+.merano-v1 .mv-button { color:#141915; }
+.merano-v1 .mv-outline { color:var(--ink); }
+.merano-v1 .a-hero { display:grid; grid-template-columns:1fr 1.08fr; gap:55px; padding-block:48px 68px; align-items:center; }
+.merano-v1 .a-hero-copy { padding-block:28px; }
+.merano-v1 .a-hero h1 { font-size:clamp(58px,5.8vw,88px); letter-spacing:-3.1px; margin:23px 0 26px; }
+.merano-v1 .a-hero h1 em { color:#d4be94; }
+.merano-v1 .a-hero .mv-text { max-width:365px; font-size:14px; }
+.merano-v1 .a-hero-photo { position:relative; }
+.merano-v1 .a-hero-photo img { height:610px; object-position:55% center; }
+.merano-v1 .a-photo-note { position:absolute; bottom:24px; right:24px; left:24px; display:flex; justify-content:space-between; gap:18px; align-items:flex-end; color:white; padding-top:90px; background:linear-gradient(transparent,#1117); padding:80px 20px 18px; font-size:10px; }
+.merano-v1 .a-photo-note strong { font-family:var(--serif); font-weight:400; font-size:24px; line-height:1.2; }
+.merano-v1 .a-index { border-block:1px solid var(--line); display:grid; grid-template-columns:repeat(3,1fr); }
+.merano-v1 .a-index > div { padding:25px 25px 25px 0; display:flex; align-items:baseline; gap:18px; }
+.merano-v1 .a-index > div + div { border-left:1px solid var(--line); padding-left:35px; }
+.merano-v1 .a-index small { color:#d4be94; font-size:10px; }
+.merano-v1 .a-index span { font-family:var(--serif); font-size:23px; }
+.merano-v1 .a-menu-photo { height:450px; }
+.merano-v1 .a-menu-copy { border-left:1px solid var(--line); padding-left:45px; }
+.merano-v1 .a-chef { background:#242d25; }
+.merano-v1 .a-chef img { height:500px; width:83%; object-position:center 20%; }
+.merano-v1 .a-signature { font-size:26px; font-family:var(--serif); margin-top:27px; color:#d4be94; }
+.merano-v1 .a-occasions { margin-top:35px; display:grid; grid-template-columns:1.5fr 1fr; gap:25px; }
+.merano-v1 .a-occasion { position:relative; min-width:0; }
+.merano-v1 .a-occasion img { height:380px; }
+.merano-v1 .a-occasion > div { padding-top:19px; display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.merano-v1 .a-occasion p { color:var(--muted); font-size:12px; margin-top:10px; }
+.merano-v1 .mv-contact { background:#e4dcc9; color:#172019; }
+.merano-v1 .mv-contact .mv-button { background:#172019; border-color:#172019; color:#eee7d9; }
+.merano-v1 .mv-footer { background:#101510; color:#d3d9cf; }
+@media(max-width:1100px) { .merano-v1 .a-hero { gap:35px; } .merano-v1 .a-hero-photo img { height:565px; } .merano-v1 .a-hero h1 { font-size:66px; } .merano-v1 .a-menu-copy { padding-left:30px; } }
+@media(max-width:850px) { .merano-v1 .a-hero { gap:25px; } .merano-v1 .a-hero h1 { font-size:53px; letter-spacing:-2px; } .merano-v1 .a-hero-photo img { height:530px; } .merano-v1 .a-index span { font-size:20px; } .merano-v1 .a-index > div + div { padding-left:20px; } .merano-v1 .a-menu-copy { border:0; padding-left:0; } }
+@media(max-width:600px) { .merano-v1 .a-hero { grid-template-columns:1fr; gap:5px; padding-block:18px 40px; } .merano-v1 .a-hero h1 { font-size:clamp(52px,14vw,72px); } .merano-v1 .a-hero-photo img { height:390px; } .merano-v1 .a-photo-note { left:12px; right:12px; bottom:12px; padding:65px 12px 10px; } .merano-v1 .a-index { grid-template-columns:1fr; } .merano-v1 .a-index > div,.merano-v1 .a-index > div + div { border-left:0; padding:15px 0; } .merano-v1 .a-index > div + div { border-top:1px solid var(--line); } .merano-v1 .a-menu-photo { height:350px; } .merano-v1 .a-chef img { width:100%; height:430px; } .merano-v1 .a-occasions { grid-template-columns:1fr; gap:32px; } .merano-v1 .a-occasion img { height:270px; } }
+
+</style>
+<div class="merano-variant merano-v1" id="poczatek"><a class="mv-skip" href="#tresc">Przejdź do treści</a><header class="mv-header"><div class="mv-wrap mv-header-inner"><a class="mv-brand" href="#poczatek" aria-label="Merano — strona główna"><img class="mv-logo" src="http://www.merano.pl/wp-content/uploads/2017/04/cropped-logo.png" alt="Merano — Bistro Otwock" fetchpriority="high"><span>BISTRO · OTWOCK</span></a><nav class="mv-nav" aria-label="Menu główne"><a href="#kuchnia">Kuchnia</a><a href="#historia">Nasza historia</a><a href="#spotkania">Przyjęcia i catering</a><a href="#kontakt">Kontakt</a><a class="mv-nav-book" href="tel:+48227794065">Zarezerwuj stolik ↗</a></nav><details class="mv-mobile-nav"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Menu mobilne"><a href="#kuchnia">Kuchnia</a><a href="#historia">Nasza historia</a><a href="#spotkania">Przyjęcia i catering</a><a href="#kontakt">Kontakt</a><a href="tel:+48227794065">Zarezerwuj stolik</a></nav></details></div></header><main id="tresc"><section class="mv-wrap a-hero"><div class="a-hero-copy"><p class="mv-kicker">Bistro Merano / Otwock</p><h1>Smak, który<br><em>zostaje.</em></h1><p class="mv-text">Autorska kuchnia Łukasza Pielaka. Nieoczywiste połączenia, uważność na talerzu i przyjemność bycia przy wspólnym stole.</p><div class="mv-actions"><a class="mv-button " href="#kuchnia">Poznaj naszą kuchnię<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a><a class="mv-button mv-outline" href="tel:+48227794065">Zarezerwuj stolik<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></div><figure class="a-hero-photo"><img class="" src="http://www.merano.pl/wp-content/uploads/2020/03/glowne.jpg" alt="Autorskie danie Łukasza Pielaka na granatowym talerzu" fetchpriority="high"><figcaption class="a-photo-note"><strong>Autorski pomysł.<br>Dobry wieczór.</strong><span>SOSNOWA 3 · OTWOCK</span></figcaption></figure></section><div class="mv-wrap a-index"><div><small>01</small><span>Kuchnia z charakterem</span></div><div><small>02</small><span>Kameralne bistro</span></div><div><small>03</small><span>Wasze ważne okazje</span></div></div><section class="mv-wrap mv-section mv-grid" id="kuchnia"><figure><img class="a-menu-photo" src="http://www.merano.pl/wp-content/uploads/2020/03/menu.jpg" alt="Bao z chrupiącym nadzieniem i świeżymi warzywami" loading="lazy"></figure><div class="mv-copy a-menu-copy"><p class="mv-kicker">Własny język smaku</p><h2>Znane składniki.<br>Nowe spotkania.</h2><p class="mv-text">W naszej kuchni fusion ciekawość spotyka doświadczenie. Wpadnij na autorską kartę, lunch w tygodniu albo deser, przy którym rozmowa potrwa jeszcze chwilę.</p><a class="mv-link" href="http://www.merano.pl/menu/">Zobacz pełną kartę <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></section><section class="a-chef" id="historia"><div class="mv-wrap mv-section mv-grid"><div class="mv-copy"><p class="mv-kicker">Szef kuchni i gospodarz</p><h2>Kuchnia ma<br>swojego autora.</h2><p class="mv-text">Łukasz Pielak stworzył w Otwocku miejsce dla ludzi, którzy lubią dobrze zjeść i poczuć się swobodnie. Merano to jego smaki i serdeczna atmosfera małego bistro.</p><p class="a-signature">Łukasz Pielak</p><a class="mv-link" href="http://www.merano.pl/o-nas-2/">Poznaj historię Merano <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div><img class="" src="http://www.merano.pl/wp-content/uploads/2020/05/lukaszpielak-683x1024.jpg" alt="Łukasz Pielak, szef kuchni Bistro Merano" loading="lazy"></div></section><section class="mv-wrap mv-section" id="spotkania"><p class="mv-kicker">Dobry stół na Waszą okazję</p><h2 style="margin-top:17px">Chwile, które warto dzielić.</h2><div class="a-occasions"><a class="a-occasion" href="http://www.merano.pl/sala-bankietowa-2/"><img class="" src="http://www.merano.pl/wp-content/uploads/2020/03/bankietowa.jpg" alt="Sala bankietowa Merano przygotowana na uroczystość" loading="lazy"><div><h3>Przyjęcia w Merano</h3><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></div><p>Rodzinne uroczystości i spotkania w sali na piętrze.</p></a><a class="a-occasion" href="http://www.merano.pl/catering/"><img class="" src="http://www.merano.pl/wp-content/uploads/2021/10/Merano_0004.jpg" alt="Desery i przekąski na przyjęciu z cateringiem Merano" loading="lazy"><div><h3>Catering</h3><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></div><p>Nasza kuchnia tam, gdzie spotykają się Wasi goście.</p></a></div></section></main><section class="mv-contact" id="kontakt"><div class="mv-wrap mv-contact-grid"><div><p class="mv-kicker">Do zobaczenia w Merano</p><h2>Miejsce przy stole<br>już na Ciebie czeka.</h2><a class="mv-button " href="tel:+48227794065">Zarezerwuj telefonicznie<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div><div class="mv-contact-details"><div><small>Odwiedź nas</small><p>ul. Sosnowa 3<br>05-400 Otwock</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Bistro%20Merano%20Sosnowa%203%20Otwock" target="_blank" rel="noopener">Wyznacz trasę ↗</a></div><div><small>Rezerwacje i zamówienia</small><a class="mv-phone" href="tel:+48227794065">22 779 40 65</a><a href="mailto:bistromerano@gmail.com">bistromerano@gmail.com</a></div></div></div></section><footer class="mv-footer"><div class="mv-wrap"><span>© Bistro Merano · Otwock</span><div><a href="https://www.instagram.com/meranobistro/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/bistromerano" target="_blank" rel="noopener">Facebook ↗</a></div></div><p class="mv-wrap mv-pfr">Restauracja jest beneficjentem Subwencji Finansowej udzielonej przez PFR.</p></footer></div>
